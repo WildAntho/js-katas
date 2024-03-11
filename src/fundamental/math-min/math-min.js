@@ -14,6 +14,17 @@ You can't use Math.min(), the goal is to recreate this function!
 
 // TODO add your code here
 
+function min(number1, number2) {
+    let table = [number1, number2];
+    table.sort();
+    if (typeof (number1) !== "number" || typeof (number2) !== "number") {
+        return NaN;
+    }
+    else {
+        return table[0];
+    }
+}
+
 // Begin of tests
 const assert = require("assert");
 

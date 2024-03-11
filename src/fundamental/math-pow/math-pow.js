@@ -18,8 +18,28 @@ You can't use Math.pow(), the goal is to recreate this function!
 
 // TODO add your code here
 
+function pow(base, exponent) {
+    if (typeof (base) !== "number" || typeof (exponent) !== "number") {
+        return NaN;
+    }
+    else {
+        let result = base;
+        if (exponent === 0) {
+            result = 1;
+        }
+        else {
+            for (let i = 0; i < exponent - 1; i++) {
+                result = result * base;
+            }
+        }
+        return result;
+
+    }
+}
+
 // Begin of tests
 const assert = require("assert");
+const exp = require("constants");
 
 assert.strictEqual(typeof pow, "function");
 assert.strictEqual(pow.length, 2);
