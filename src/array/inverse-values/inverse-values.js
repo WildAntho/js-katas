@@ -16,4 +16,20 @@ Don't mutate the parameter.
 
 // TODO add your code here
 
+function inverse(table) {
+    if (table === null || table == []) {
+        return [];
+    }
+    else {
+        let newTable = [];
+        for (i = 0; i < table.length; i++) {
+            table[i] = -table[i];
+            newTable.push(table[i]);
+        }
+        return newTable;
+    }
+}
+
+
+
 module.exports = inverse;

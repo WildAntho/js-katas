@@ -16,6 +16,40 @@ If a value of the argument is not 1 or 2, return "Illegal argument".
 */
 // TODO add your code here
 
+function getScore(table) {
+    let score1 = 0;
+    let score2 = 0;
+    if (table == []) {
+        return "0-0: draw";
+    }
+    else if (table === null) {
+        return "Illegal argument"
+    }
+    else {
+        for (i = 0; i < table.length; i++) {
+            if (table[i] === 1) {
+                score1 += 1;
+            }
+            else if (table[i] === 2) {
+                score2 += 1;
+            }
+            else if (table[i] !== 1 || table[i] !== 2) {
+                return "Illegal argument"
+            }
+        }
+    }
+    if (score1 > score2) {
+        return score1 + "-" + score2 + " : team 1 wins the game";
+    }
+    else if (score1 < score2) {
+        return score1 + "-" + score2 + " : team 2 wins the game";
+    }
+    else if (score1 === score2) {
+        return score1 + "-" + score2 + " : draw";
+    }
+}
+
+
 // Begin of tests
 const assert = require("assert");
 assert.strictEqual(typeof getScore, "function");
